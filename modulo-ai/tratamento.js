@@ -1,5 +1,5 @@
 module.exports = function(mensagem_usuario){
-  if(mensagem_usuario.indexOf("Ola") !== -1 || mensagem_usuario.indexOf("Oi") !== -1){
+  if(mensagem_usuario.indexOf("Ola") !== -1 || mensagem_usuario.indexOf("Oi") !== -1){ //se a mensagem do usuário tiver Ola ou Oi ele responde com as possibilidades abaixo
     respostas = [
       "Ola cara",
       "Oi amigo",
@@ -7,7 +7,9 @@ module.exports = function(mensagem_usuario){
       "Oi, posso te ajudar em algo?"
     ];
     return respostas[Math.floor(Math.random() * respostas.length)]; //aqui ele vai escolher aleatoriamente uma resposta pra mandar de volta
-  }else{
-    return "desculpa, não entendi";
+  }
+
+  if(mensagem_usuario.indexOf("voce") !== -1 && mensagem_usuario.indexOf("sobre")){
+    return "Sou um robo construido pelos alunos Joao Gouveia, Alexandre Pirfo e Ramirez Gonçalves para a disciplina de inteligencia artificial na FUMEC. Posso te ajudar com duvidas relacionadas à viagens";
   }
 }
