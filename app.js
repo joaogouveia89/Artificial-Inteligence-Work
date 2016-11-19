@@ -15,9 +15,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 //Processa application/json
 app.use(bodyParser.json());
 
-
-carregaRegras(engine);
-
 app.get('/', function(req, res){
   res.send('Hello world, I am a chat bot');
 });
