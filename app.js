@@ -4,6 +4,7 @@ var request =           require('request');
 
 
 var app = express();
+var verify_token = "vou_passar_na_materia";
 var token = "EAASc98tm3XgBALdBS8T3AhsZCK2bVDVHejSmgTq3veEZCWbP9SKHhNSxfZA9RMVbatkr6Yo5fYZCLF5HQoDxTlk3jhw9kGhtA3RYg6EJNwYZBajfPZBxaXx0Ls0ZBxosKCSQy4e3paKQFx6NZCY4Ckdk3qkwPU1jRTwZCpOGiE9aNKwZDZD";
 var porta = process.env.PORT || 3000;
 
@@ -15,12 +16,12 @@ app.use(bodyParser.json());
 
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+  res.send('Hello world, I am a chat bot');
 });
 
 // para verificação do Facebook
 app.get('/webhook/', function (req, res) {
-    if (req.query['hub.verify_token'] === "vou_passar_na_materia") {
+    if (req.query['hub.verify_token'] === verify_token) {
         res.send(req.query['hub.challenge'])
     }
     res.send('Error, wrong token')
