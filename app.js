@@ -1,6 +1,7 @@
 var express =           require('express');
 var bodyParser =        require('body-parser');
 var request =           require('request');
+var tratamento =        require('./modulo-ai/tratamento');
 
 
 var app = express();
@@ -34,7 +35,7 @@ app.post('/webhook/', function (req, res) {
         var sender = event.sender.id
         if (event.message && event.message.text) {
             var text = event.message.text
-            sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+            sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200) + ": " + tratamento());
         }
     }
     res.sendStatus(200)
