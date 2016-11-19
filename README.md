@@ -4,7 +4,7 @@
 
 ## Para editar o trabalho
 
-* Crie uma conta no site [C9](c9.io) e me mande por whatsapp seu usuário de la para eu poder te adicionar no workspace onde tem o trabalho
+* Crie uma conta no site <a href="www.c9.io" target="_blank">C9</a> e me mande por whatsapp seu usuário de la para eu poder te adicionar no workspace onde tem o trabalho
 
 ## Criar lógicas
 
@@ -23,13 +23,13 @@ Ou caso queira um array com varias possibilidades faça:
 
 ` var resps = ["Ola cara", "Oi, em que posso ajudar", "Oi", "Ola"];
   return resps[Math.floor(Math.random() * resps.length)]; `
-  
+
 ## Para enviar alterações
 
 depois que voce acabou de criar suas lógicas e deseja testar elas, voce vai precisar apertar no botão "+" que fica embaixo da tela no C9
 e escolher "New terminal", depois digite no terminal os comandos:
 
-` git add . '
+` git add . `
 
 depois
 
@@ -41,11 +41,10 @@ depois
 
 depois
 
-`git push heroku master` 
+`git push heroku master`
 
 Depois do termino dos comandos seu codigo esta pronto para ser testado, aí é só entrar na pagina do FB que eu mandei por whatsapp e testar
 
 caso algum comando acima relacionados ao git nao funcione me fale que aí precisaremos criar uma conta no github tb
 
 qualquer duvida podem me chamar pelo whatsapp
-
