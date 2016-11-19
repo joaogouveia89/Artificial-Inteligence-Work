@@ -4,7 +4,7 @@ var request =           require('request');
 
 
 var app = express();
-var token = EAASc98tm3XgBALdBS8T3AhsZCK2bVDVHejSmgTq3veEZCWbP9SKHhNSxfZA9RMVbatkr6Yo5fYZCLF5HQoDxTlk3jhw9kGhtA3RYg6EJNwYZBajfPZBxaXx0Ls0ZBxosKCSQy4e3paKQFx6NZCY4Ckdk3qkwPU1jRTwZCpOGiE9aNKwZDZD;
+var token = "EAASc98tm3XgBALdBS8T3AhsZCK2bVDVHejSmgTq3veEZCWbP9SKHhNSxfZA9RMVbatkr6Yo5fYZCLF5HQoDxTlk3jhw9kGhtA3RYg6EJNwYZBajfPZBxaXx0Ls0ZBxosKCSQy4e3paKQFx6NZCY4Ckdk3qkwPU1jRTwZCpOGiE9aNKwZDZD";
 var porta = process.env.PORT || 3000;
 
 //Processa o application/x-www-form-urlencoded
@@ -39,10 +39,9 @@ app.post('/webhook/', function (req, res) {
     res.sendStatus(200)
 })
 
-app.listen(porta, function(porta){
-  console.log("escutando no endereço localhost:" + porta);
-});
+app.listen(porta);
 
+console.log("escutando no endereço localhost:" + porta);
 
 
 
