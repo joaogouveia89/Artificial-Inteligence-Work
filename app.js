@@ -1,7 +1,8 @@
-var express =           require('express');
-var bodyParser =        require('body-parser');
-var request =           require('request');
-var tratamento =        require('./modulo-ai/tratamento');
+var express            = require('express');
+var bodyParser         = require('body-parser');
+var request            = require('request');
+var nools              = require('nools');
+var busca              = require('./modulo-ai/busca');
 
 
 var app = express();
@@ -15,6 +16,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 //Processa application/json
 app.use(bodyParser.json());
 
+
+carregaRegras(engine);
 
 app.get('/', function(req, res){
   res.send('Hello world, I am a chat bot');
@@ -34,8 +37,8 @@ app.post('/webhook/', function (req, res) {
         var event = req.body.entry[0].messaging[i]
         var sender = event.sender.id
         if (event.message && event.message.text) {
-            var text = event.message.text
-            var resposta = tratamento(text.substring(0,200).toLowerCase());
+            var text = event.message.text;
+            var resposta = busca(text.substring(0,200).toLowerCase(), nools);
             sendTextMessage(sender, resposta);
         }
     }
