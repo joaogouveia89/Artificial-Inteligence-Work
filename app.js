@@ -1,7 +1,6 @@
 var express            = require('express');
 var bodyParser         = require('body-parser');
 var request            = require('request');
-var nools              = require('nools');
 var busca              = require('./modulo-ai/busca');
 
 
