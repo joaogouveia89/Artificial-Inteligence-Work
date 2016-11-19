@@ -1,0 +1,33 @@
+{
+  "name": "chatbot-fumec-ai",
+  "version": "1.0.0",
+  "description": "Auto Instrucional feito para a materia de  Inteligencia Artificial, ministrada pelo professor Luiz, no segundo semestre de 2016",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaogouveia89/Artificial-Inteligence-Work.git"
+  },
+  "keywords": [
+    "IA",
+    "Inteligencia",
+    "Artificial",
+    "Chatterbot",
+    "FUMEC",
+    "Ciencia",
+    "da",
+    "Computacao"
+  ],
+  "author": "João Lucas Gouveia, Alexandre Pirfo e Ramirez Goncalvez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaogouveia89/Artificial-Inteligence-Work/issues"
+  },
+  "homepage": "https://github.com/joaogouveia89/Artificial-Inteligence-Work#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "html": "^1.0.0"
+  }
+}
