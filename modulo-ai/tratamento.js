@@ -9,7 +9,7 @@ module.exports = function(mensagem_usuario){
     return respostas[Math.floor(Math.random() * respostas.length)]; //aqui ele vai escolher aleatoriamente uma resposta pra mandar de volta
   }
 
-  if(mensagem_usuario.indexOf("voce") !== -1 && mensagem_usuario.indexOf("sobre")){
+  if(mensagem_usuario.indexOf("voce") !== -1 && (mensagem_usuario.indexOf("sobre") || mensagem_usuario.indexOf("quem é"))){
     return "Sou um robo construido pelos alunos Joao Gouveia, Alexandre Pirfo e Ramirez Gonçalves para a disciplina de inteligencia artificial na FUMEC. Posso te ajudar com duvidas relacionadas à viagens";
   }
 }
