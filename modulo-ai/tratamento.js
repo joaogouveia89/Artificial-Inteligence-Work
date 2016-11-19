@@ -1,5 +1,5 @@
 module.exports = function(mensagem_usuario){
-  if(mensagem_usuario.indexOf("Ola") !== -1 || mensagem_usuario.indexOf("Oi") !== -1){ //se a mensagem do usuário tiver Ola ou Oi ele responde com as possibilidades abaixo
+  if(mensagem_usuario.indexOf("ola") !== -1 || mensagem_usuario.indexOf("oi") !== -1){ //se a mensagem do usuário tiver Ola ou Oi ele responde com as possibilidades abaixo
     respostas = [
       "Ola cara",
       "Oi amigo",
