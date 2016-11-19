@@ -4,7 +4,7 @@
 
 ## Para editar o trabalho
 
-* Crie uma conta no site <a href="www.c9.io" target="_blank">C9</a> e me mande por whatsapp seu usuário de la para eu poder te adicionar no workspace onde tem o trabalho
+* Crie uma conta no site <a href="http://www.c9.io" target="_blank">C9</a> e me mande por whatsapp seu usuário de la para eu poder te adicionar no workspace onde tem o trabalho
 
 ## Criar lógicas
 
