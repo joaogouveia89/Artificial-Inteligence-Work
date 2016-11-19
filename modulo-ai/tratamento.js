@@ -14,6 +14,10 @@ module.exports = function(mensagem_usuario){
   }
 
   if(mensagem_usuario.indexOf("melhor") !== -1 && mensagem_usuario.indexOf("curso") !== -1){
-    return "O melhor curso da fumec com certeza é o de ciência da computação :p";
+    return "O melhor curso da fumec com certeza é o de ciência da computação 8|";
+  }
+
+  if(mensagem_usuario.indexOf("cursos") && mensagem_usuario.indexOf("quais") && mensagem_usuario.indexOf("face") && (mensagem_usuario.indexOf("disponiveis") || mensagem_usuario.indexOf("tem"))){
+    return "A face oferece os cursos de: \n ciência da computação administração \n ciências contábeis \n negócios internacionais \n Alem de tecnólogos, pós graduações e pós graduações";
   }
 }
