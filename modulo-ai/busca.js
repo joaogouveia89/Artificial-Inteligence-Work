@@ -10,7 +10,7 @@ module.exports = function(mensagem_usuario){
       "Ola, em que posso ajudar? ",
       "Oi, em que posso ajudar? ",
     ];
-    return resposta + poss[Math.floor(Math.random() * respostas.length)]; //aqui ele vai escolher aleatoriamente uma resposta pra mandar de volta
+    return poss[Math.floor(Math.random() * respostas.length)]; //aqui ele vai escolher aleatoriamente uma resposta pra mandar de volta
   }
 
   if(mensagem_usuario.indexOf("voce") !== -1 && (mensagem_usuario.indexOf("sobre") || mensagem_usuario.indexOf("quem é"))){
