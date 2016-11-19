@@ -4,8 +4,7 @@ var request =           require('request');
 
 
 var app = express();
-var token = "vou_passar_na_materia";
-var access_token = EAASc98tm3XgBALdBS8T3AhsZCK2bVDVHejSmgTq3veEZCWbP9SKHhNSxfZA9RMVbatkr6Yo5fYZCLF5HQoDxTlk3jhw9kGhtA3RYg6EJNwYZBajfPZBxaXx0Ls0ZBxosKCSQy4e3paKQFx6NZCY4Ckdk3qkwPU1jRTwZCpOGiE9aNKwZDZD;
+var token = EAASc98tm3XgBALdBS8T3AhsZCK2bVDVHejSmgTq3veEZCWbP9SKHhNSxfZA9RMVbatkr6Yo5fYZCLF5HQoDxTlk3jhw9kGhtA3RYg6EJNwYZBajfPZBxaXx0Ls0ZBxosKCSQy4e3paKQFx6NZCY4Ckdk3qkwPU1jRTwZCpOGiE9aNKwZDZD;
 var porta = process.env.PORT || 3000;
 
 //Processa o application/x-www-form-urlencoded
@@ -21,7 +20,7 @@ app.get('/', function(req, res){
 
 // para verificação do Facebook
 app.get('/webhook/', function (req, res) {
-    if (req.query['hub.verify_token'] === token) {
+    if (req.query['hub.verify_token'] === "vou_passar_na_materia") {
         res.send(req.query['hub.challenge'])
     }
     res.send('Error, wrong token')
@@ -52,7 +51,7 @@ function sendTextMessage(sender, text) {
     let messageData = { text:text }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
+        qs: {access_token: token},
         method: 'POST',
         json: {
             recipient: {id:sender},
