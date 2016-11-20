@@ -18,21 +18,18 @@ module.exports = function(mensagem_usuario, dados){
     dados.unidades.fea.cursos.forEach(function(c){
       if(mensagem_usuario.indexOf(curso) !== -1){
         curso = c;
-        break;
       }
     });
   }else if(unidade === "face"){
     dados.unidades.face.cursos.forEach(function(c){
       if(mensagem_usuario.indexOf(curso) !== -1){
         curso = c;
-        break;
       }
     });
   }else if(unidade === "fch"){
     dados.unidades.fch.cursos.forEach(function(c){
       if(mensagem_usuario.indexOf(curso) !== -1){
         curso = c;
-        break;
       }
     });
   }else{
@@ -40,21 +37,18 @@ module.exports = function(mensagem_usuario, dados){
     dados.unidades.fea.cursos.forEach(function(c){
       if(mensagem_usuario.indexOf(curso) !== -1){
         curso = c;
-        break;
       }
     });
     if(curso === undefined){
       dados.unidades.face.cursos.forEach(function(c){
         if(mensagem_usuario.indexOf(curso) !== -1){
           curso = c;
-          break;
         }
       });
       if(curso === undefined){
         dados.unidades.fch.cursos.forEach(function(c){
           if(mensagem_usuario.indexOf(curso) !== -1){
             curso = c;
-            break;
           }
         });
       }
