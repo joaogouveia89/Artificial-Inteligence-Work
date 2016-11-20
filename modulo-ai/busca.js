@@ -16,38 +16,38 @@ module.exports = function(mensagem_usuario, dados){
   //identificação do curso desejado
   if(unidade === "fea"){
     dados.unidades.fea.cursos.forEach(function(c){
-      if(mensagem_usuario.indexOf(curso) !== -1){
+      if(mensagem_usuario.indexOf(c) !== -1){
         curso = c;
       }
     });
   }else if(unidade === "face"){
     dados.unidades.face.cursos.forEach(function(c){
-      if(mensagem_usuario.indexOf(curso) !== -1){
+      if(mensagem_usuario.indexOf(c) !== -1){
         curso = c;
       }
     });
   }else if(unidade === "fch"){
     dados.unidades.fch.cursos.forEach(function(c){
-      if(mensagem_usuario.indexOf(curso) !== -1){
+      if(mensagem_usuario.indexOf(c) !== -1){
         curso = c;
       }
     });
   }else{
     // como nao tem nenhuma unidade descrita na mensagem do usuário, o robo vai procurar em todos os cursos de todas as unidades
     dados.unidades.fea.cursos.forEach(function(c){
-      if(mensagem_usuario.indexOf(curso) !== -1){
+      if(mensagem_usuario.indexOf(c) !== -1){
         curso = c;
       }
     });
     if(curso === undefined){
       dados.unidades.face.cursos.forEach(function(c){
-        if(mensagem_usuario.indexOf(curso) !== -1){
+        if(mensagem_usuario.indexOf(c) !== -1){
           curso = c;
         }
       });
       if(curso === undefined){
         dados.unidades.fch.cursos.forEach(function(c){
-          if(mensagem_usuario.indexOf(curso) !== -1){
+          if(mensagem_usuario.indexOf(c) !== -1){
             curso = c;
           }
         });
