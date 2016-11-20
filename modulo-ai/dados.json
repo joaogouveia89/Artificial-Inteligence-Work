@@ -2,15 +2,15 @@
   "unidades": {
     "face":{
       "telefone": "3228-3060",
-      "cursos": ["Administração", "Ciência da Computação", "Ciências Contabeis", "Negócios Internacionais"]
+      "cursos": ["administração", "ciência da computação", "ciências contabeis", "negócios internacionais"]
     },
     "fch":{
       "telefone": "3228-3090 ou 3281-3528",
-      "cursos": ["Biomedicina", "Comunicação Social - Jornalismo", "Comunicação Social - Publicidade e Propaganda", "Direito", "Fisioterapia", "Pedagogia", "Psicologia"]
+      "cursos": ["biomedicina", "comunicação social - jornalismo", "comunicação social - publicidade e propaganda", "direito", "fisioterapia", "pedagogia", "psicologia"]
     },
     "fea":{
       "telefone": "3228-3150 ou 3225-3171",
-      "cursos": ["Arquitetura e Urbanismo", "Ciências Aeronauticas", "Design de Interiores", "Design de Moda", "Design de Produto", "Design Gráfico", "Engenharia Ambiental", "Engenharia Bioenergética", "Engenharia Civil", "Engenharia de Produção Civil", "Engenharia de Telecomunicações"]
+      "cursos": ["arquitetura e urbanismo", "ciências aeronauticas", "design de interiores", "design de moda", "design de produto", "design gráfico", "engenharia ambiental", "engenharia bioenergética", "engenharia civil", "engenharia de produção civil", "engenharia de telecomunicações"]
     }
   },
   "contato": {
