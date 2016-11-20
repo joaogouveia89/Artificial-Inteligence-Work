@@ -1,0 +1,26 @@
+{
+  "unidades": {
+    "face":{
+      "telefone": "3228-3060",
+      "cursos": ["Administração", "Ciência da Computação", "Ciências Contabeis", "Negócios Internacionais"]
+    },
+    "fch":{
+      "telefone": "3228-3090 ou 3281-3528",
+      "cursos": ["Biomedicina", "Comunicação Social - Jornalismo", "Comunicação Social - Publicidade e Propaganda", "Direito", "Fisioterapia", "Pedagogia", "Psicologia"]
+    },
+    "fea":{
+      "telefone": "3228-3150 ou 3225-3171",
+      "cursos": ["Arquitetura e Urbanismo", "Ciências Aeronauticas", "Design de Interiores", "Design de Moda", "Design de Produto", "Design Gráfico", "Engenharia Ambiental", "Engenharia Bioenergética", "Engenharia Civil", "Engenharia de Produção Civil", "Engenharia de Telecomunicações"]
+    }
+  },
+  "contato": {
+    "telefone": "3228-3000",
+    "endereco": "Rua Cobre 200 no bairro Cruzeiro em Belo Horizonte - MG"
+  },
+  "cumprimento-despedida":{
+    "cumprimentos": ["oi","ola"],
+    "tudo-joia": "tudo bem e com voce?",
+    "despedida": "Espero ter ajudado, obrigado (y)"
+  },
+  "naoentendi": "desculpa, não entendi o que voce disse, pode reformular a pergunta?"
+}

@@ -1,6 +1,7 @@
 var express            = require('express');
 var bodyParser         = require('body-parser');
 var request            = require('request');
+var fs                 = require('fs');
 var busca              = require('./modulo-ai/busca');
 
 
@@ -28,13 +29,14 @@ app.get('/webhook/', function (req, res) {
 });
 
 app.post('/webhook/', function (req, res) {
+    var base = JSON.parse(fs.readFileSync(__dirname + '/modulo-ai/dados.json', 'utf8')); //carregando a base de informações
     var messaging_events = req.body.entry[0].messaging
     for (var i = 0; i < messaging_events.length; i++) {
         var event = req.body.entry[0].messaging[i]
         var sender = event.sender.id
         if (event.message && event.message.text) {
             var text = event.message.text;
-            var resposta = busca(text.substring(0,200).toLowerCase());
+            var resposta = busca(text.substring(0,200).toLowerCase(), base);
             sendTextMessage(sender, resposta);
         }
     }
