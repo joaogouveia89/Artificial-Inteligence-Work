@@ -6,6 +6,7 @@ var busca              = require('./modulo-ai/busca');
 
 
 var app = express();
+var globalSender;
 var verify_token = "vou_passar_na_materia";
 var token = "EAASc98tm3XgBALdBS8T3AhsZCK2bVDVHejSmgTq3veEZCWbP9SKHhNSxfZA9RMVbatkr6Yo5fYZCLF5HQoDxTlk3jhw9kGhtA3RYg6EJNwYZBajfPZBxaXx0Ls0ZBxosKCSQy4e3paKQFx6NZCY4Ckdk3qkwPU1jRTwZCpOGiE9aNKwZDZD";
 var porta = process.env.PORT || 3000;
@@ -34,10 +35,11 @@ app.post('/webhook/', function (req, res) {
     for (var i = 0; i < messaging_events.length; i++) {
         var event = req.body.entry[0].messaging[i]
         var sender = event.sender.id;
-        console.log("sender: " + JSON.stringify(sender));
+        globalSender = sender;
         if (event.message && event.message.text) {
             var text = event.message.text;
-            var resposta = busca(text.substring(0,200).toLowerCase(), base);
+            var nomeUsuario = getUserName();
+            var resposta = busca(text.substring(0,200).toLowerCase(), base, nomeUsuario);
             sendTextMessage(sender, resposta);
         }
     }
@@ -48,6 +50,21 @@ app.listen(porta);
 
 console.log("escutando no endereço localhost:" + porta);
 
+
+
+
+function getUserName(){
+    var userData;
+    var urlReq = "https://graph.facebook.com/v2.6/"+globalSender.id+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token="+token; 
+    
+    request({
+       url: urlReq,
+       method: 'GET',
+       json: {
+           recipient: {id: globalSender}
+       }
+    });
+}
 
 function sendTextMessage(sender, text) {
     var messageData = { text:text }
