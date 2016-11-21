@@ -57,47 +57,47 @@ module.exports = function(mensagem_usuario, dados){
 
   //definição do tipo de informação: cursos, contato, curso, cumprimento-despedida
 
-  if(mensagem_usuario.indexOf("cursos") !== -1 && mensagem_usuario.indexOf("melhor") === -1){
+  if(mensagem_usuario.indexOf("cursos") !== -1 && mensagem_usuario.indexOf("melhores") === -1){
     if(unidade !== undefined){
-      resposta = "os cursos disponiveis na " + unidade + "sao: ";
+      resposta = "os cursos disponiveis na " + unidade + " sao: ";
       if(unidade === "face"){
         dados.unidades.face.cursos.forEach(function(c){
           if(mensagem_usuario.indexOf(c) !== -1){
-            resposta = reposta + c + ", ";
+            resposta.concat(c).concat(", ");
           }
         });
       }else if(unidade === "fea"){
         dados.unidades.fea.cursos.forEach(function(c){
           if(mensagem_usuario.indexOf(c) !== -1){
-            resposta = reposta + c + ", ";
+            resposta.concat(c).concat(", ");
           }
         });
       }else if(unidade === "fch"){
         dados.unidades.fch.cursos.forEach(function(c){
           if(mensagem_usuario.indexOf(c) !== -1){
-            resposta = reposta + c + ", ";
+            resposta.concat(c).concat(", ");
           }
         });
       }
     }else{
       dados.unidades.face.cursos.forEach(function(c){
         if(mensagem_usuario.indexOf(c) !== -1){
-          resposta = reposta + c + ", ";
+          resposta.concat(c).concat(", ");
         }
       });
       dados.unidades.fea.cursos.forEach(function(c){
         if(mensagem_usuario.indexOf(c) !== -1){
-          resposta = reposta + c + ", ";
+          resposta.concat(c).concat(", ");
         }
       });
       dados.unidades.fch.cursos.forEach(function(c){
         if(mensagem_usuario.indexOf(c) !== -1){
-          resposta = reposta + c + ", ";
+          resposta.concat(c).concat(", ");
         }
       });
     }
     return resposta;
-  }else if(mensagem_usuario.indexOf("cursos") !== -1 && mensagem_usuario.indexOf("melhor") !== -1){
+  }else if(mensagem_usuario.indexOf("cursos") !== -1 && mensagem_usuario.indexOf("melhores") !== -1){
     // aqui esta sendo considerado que o usuário pediu a melhor opção e nesse caso o robo nao pode dar uma opinião e sim direcionar o usuario a buscar informações e tomar sua propria decisão
     if(unidade !== undefined){
       return "Não posso te falar qual o melhor curso da " + unidade + " pois sou suspeito para falar, são todos excelentes. Te aconselho a conversar com os alunos ja matriculados e professores para tomar sua decisão! Boa sorte!";
