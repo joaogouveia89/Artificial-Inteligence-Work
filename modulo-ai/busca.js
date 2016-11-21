@@ -61,26 +61,26 @@ module.exports = function(mensagem_usuario, dados){
     if(unidade !== undefined){
       resposta = "os cursos disponiveis na " + unidade + " sao: ";
       if(unidade === "face"){
-        dados.unidade.face.cursos.forEach(function(c){
+        dados.unidades.face.cursos.forEach(function(c){
           resposta.concat(c).concat(", ");
         });
       }else if(unidade === "fea"){
-        dados.unidade.fea.cursos.forEach(function(c){
+        dados.unidades.fea.cursos.forEach(function(c){
           resposta.concat(c).concat(", ");
         });
       }else if(unidade === "fch"){
-        dados.unidade.fch.cursos.forEach(function(c){
+        dados.unidades.fch.cursos.forEach(function(c){
           resposta.concat(c).concat(", ");
         });
       }
     }else{
-      dados.unidade.face.cursos.forEach(function(c){
+      dados.unidades.face.cursos.forEach(function(c){
         resposta.concat(c).concat(", ");
       });
-      dados.unidade.fea.cursos.forEach(function(c){
+      dados.unidades.fea.cursos.forEach(function(c){
         resposta.concat(c).concat(", ");
       });
-      dados.unidade.fch.cursos.forEach(function(c){
+      dados.unidades.fch.cursos.forEach(function(c){
         resposta.concat(c).concat(", ");
       });
     }
