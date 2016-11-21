@@ -62,7 +62,7 @@ module.exports = function(mensagem_usuario, dados){
       resposta = "os cursos disponiveis na " + unidade + " sao: ";
       if(unidade === "face"){
         dados.unidades.face.cursos.forEach(function(c){
-          resposta.concat(c).concat(", ");
+          resposta.concat(c);
           console.log(resposta);
         });
       }else if(unidade === "fea"){
