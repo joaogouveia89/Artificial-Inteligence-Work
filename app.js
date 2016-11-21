@@ -63,7 +63,16 @@ function getUserName(){
        json: {
            recipient: {id: globalSender}
        }
+    }, function(error, response, body) {
+        if(error){
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+         console.log("response: " + JSON.stringify(response));
+         console.log("body: " + JSON.stringify(body));
     });
+   
 }
 
 function sendTextMessage(sender, text) {
