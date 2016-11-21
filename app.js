@@ -33,8 +33,8 @@ app.post('/webhook/', function (req, res) {
     var messaging_events = req.body.entry[0].messaging
     for (var i = 0; i < messaging_events.length; i++) {
         var event = req.body.entry[0].messaging[i]
-        var sender = event.sender.id
-        console.log("Digitando...");
+        var sender = event.sender.id;
+        console.log(JSON.stringify(sender));
         if (event.message && event.message.text) {
             var text = event.message.text;
             var resposta = busca(text.substring(0,200).toLowerCase(), base);
@@ -47,8 +47,6 @@ app.post('/webhook/', function (req, res) {
 app.listen(porta);
 
 console.log("escutando no endereço localhost:" + porta);
-
-
 
 
 function sendTextMessage(sender, text) {
