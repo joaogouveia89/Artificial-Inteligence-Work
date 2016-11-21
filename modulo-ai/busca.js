@@ -63,7 +63,9 @@ module.exports = function(mensagem_usuario, dados){
       if(unidade === "face"){
         dados.unidades.face.cursos.forEach(function(c){
           resposta+=c;
-          console.log(resposta);
+          if(dados.unidades.face.cursos[dados.unidades.face.cursos.length - 1 !== c){
+            resposta+", ";
+          }          
         });
       }else if(unidade === "fea"){
         dados.unidades.fea.cursos.forEach(function(c){
