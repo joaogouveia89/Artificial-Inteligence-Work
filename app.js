@@ -34,6 +34,7 @@ app.post('/webhook/', function (req, res) {
     for (var i = 0; i < messaging_events.length; i++) {
         var event = req.body.entry[0].messaging[i]
         var sender = event.sender.id
+        sendTextMessage(sender, "Digitando...");
         if (event.message && event.message.text) {
             var text = event.message.text;
             var resposta = busca(text.substring(0,200).toLowerCase(), base);
