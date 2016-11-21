@@ -54,6 +54,7 @@ console.log("escutando no endereço localhost:" + porta);
 
 
 function getUserName(){
+    console.log("user id = " + globalSender.id);
     var userData;
     var urlReq = "https://graph.facebook.com/v2.6/"+globalSender.id+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token="+token; 
     
