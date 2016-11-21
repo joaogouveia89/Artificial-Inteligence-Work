@@ -64,7 +64,7 @@ module.exports = function(mensagem_usuario, dados){
         dados.unidades.face.cursos.forEach(function(c){
           resposta+=c;
           if(dados.unidades.face.cursos[dados.unidades.face.cursos.length - 1] !== c){
-            resposta+", ";
+            resposta+=", ";
           }
         });
       }else if(unidade === "fea"){
