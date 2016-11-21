@@ -83,23 +83,7 @@ module.exports = function(mensagem_usuario, dados){
         });
       }
     }else{
-      dados.unidades.face.cursos.forEach(function(c){
-        resposta+=c;
-        if(dados.unidades.face.cursos[dados.unidades.face.cursos.length - 1] !== c){
-          resposta+=", ";
-        }
-      });
-      dados.unidades.fea.cursos.forEach(function(c){
-        resposta+=c;
-        if(dados.unidades.fea.cursos[dados.unidades.fea.cursos.length - 1] !== c){
-          resposta+=", ";
-        }
-      });
-      dados.unidades.fch.cursos.forEach(function(c){
-        if(dados.unidades.fch.cursos[dados.unidades.fch.cursos.length - 1] !== c){
-          resposta+=", ";
-        }
-      });
+      resposta = "Por favor, me informe de qual unidade voce tem vontade de saber sobre os cursos(face, fea ou fch) e refaça a pergunta";
     }
     return resposta;
   }else if(mensagem_usuario.indexOf("cursos") !== -1 && mensagem_usuario.indexOf("melhores") !== -1){
