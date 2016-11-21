@@ -40,7 +40,7 @@ app.post('/webhook/', function (req, res) {
             var text = event.message.text;
             var nomeUsuario = getUserName();
             var resposta = busca(text.substring(0,200).toLowerCase(), base, nomeUsuario);
-            sendTextMessage(sender, resposta);
+            sendTextMessage(sender, nomeUsuario+", "+resposta);
         }
     }
     res.sendStatus(200)
