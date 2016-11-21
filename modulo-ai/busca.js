@@ -69,22 +69,36 @@ module.exports = function(mensagem_usuario, dados){
         });
       }else if(unidade === "fea"){
         dados.unidades.fea.cursos.forEach(function(c){
-          resposta.concat(c).concat(", ");
+          resposta+=c;
+          if(dados.unidades.fea.cursos[dados.unidades.fea.cursos.length - 1] !== c){
+            resposta+=", ";
+          }
         });
       }else if(unidade === "fch"){
         dados.unidades.fch.cursos.forEach(function(c){
-          resposta.concat(c).concat(", ");
+          resposta+=c;
+          if(dados.unidades.fch.cursos[dados.unidades.fch.cursos.length - 1] !== c){
+            resposta+=", ";
+          }
         });
       }
     }else{
       dados.unidades.face.cursos.forEach(function(c){
-        resposta.concat(c).concat(", ");
+        resposta+=c;
+        if(dados.unidades.face.cursos[dados.unidades.face.cursos.length - 1] !== c){
+          resposta+=", ";
+        }
       });
       dados.unidades.fea.cursos.forEach(function(c){
-        resposta.concat(c).concat(", ");
+        resposta+=c;
+        if(dados.unidades.fea.cursos[dados.unidades.fea.cursos.length - 1] !== c){
+          resposta+=", ";
+        }
       });
       dados.unidades.fch.cursos.forEach(function(c){
-        resposta.concat(c).concat(", ");
+        if(dados.unidades.fch.cursos[dados.unidades.fch.cursos.length - 1] !== c){
+          resposta+=", ";
+        }
       });
     }
     return resposta;
