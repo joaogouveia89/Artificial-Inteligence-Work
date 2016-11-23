@@ -65,7 +65,7 @@ function getUserName(text, base, sender){
     console.log("Início getUserName");
 	console.log("user id = " + globalSender);
     var userData;
-    var urlReq = "https://graph.facebook.com/v2.6/"+globalSender.id+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token="+token; 
+    var urlReq = "https://graph.facebook.com/v2.6/"+globalSender+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token="+token; 
     
 	console.log("variável urlReq = " + urlReq);
 	
