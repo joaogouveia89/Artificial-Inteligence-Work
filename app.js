@@ -43,7 +43,8 @@ app.post('/webhook/', function (req, res) {
             console.log("Dentro do if no app.post");
 			var text = event.message.text;
             console.log("variável text = " + text);
-			console.log("variável base = " + base);
+			console.log("variável base = ");
+			console.log(base);
 			console.log("variável sender = " + sender);
 			console.log("Antes de chamar a função getUserName");
 			getUserName(text, base, sender);
@@ -66,6 +67,8 @@ function getUserName(text, base, sender){
     var userData;
     var urlReq = "https://graph.facebook.com/v2.6/"+globalSender.id+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token="+token; 
     
+	console.log("variável urlReq = " + urlReq);
+	
     request({
        url: urlReq,
        method: 'GET',
@@ -73,12 +76,14 @@ function getUserName(text, base, sender){
            recipient: {id: globalSender}
        }
     }, function(error, response, body) {
-        if(error){
+        console.log("dentro da função de retorno da requisição na getUserName");
+		if(error){
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         }
-         console.log("response: " + JSON.stringify(response));
+         console.log("requisição feita e retornada com sucesso (getUserName)");
+		 console.log("response: " + JSON.stringify(response));
          console.log("body: " + JSON.stringify(body));
 		 
 		 var resposta = busca(text.substring(0,200).toLowerCase(), base, nomeUsuario);
@@ -89,7 +94,8 @@ function getUserName(text, base, sender){
 }
 
 function sendTextMessage(sender, text) {
-    var messageData = { text:text }
+console.log("Início sendTextMessage");   
+   var messageData = { text:text }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token: token},
@@ -104,5 +110,6 @@ function sendTextMessage(sender, text) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         }
-    })
+    });
+	console.log("Fim sendTextMessage");  
 }
