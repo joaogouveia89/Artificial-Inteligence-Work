@@ -26,21 +26,28 @@ app.get('/webhook/', function (req, res) {
     if (req.query['hub.verify_token'] === verify_token) {
         res.send(req.query['hub.challenge'])
     }
-    res.send('Error, wrong token')
+    res.send('Error, wrong token');
+	console.log("Fim app.post");
 });
 
 app.post('/webhook/', function (req, res) {
-    var base = JSON.parse(fs.readFileSync(__dirname + '/modulo-ai/dados.json', 'utf8')); //carregando a base de informações
+	console.log("Início app.post");
+   var base = JSON.parse(fs.readFileSync(__dirname + '/modulo-ai/dados.json', 'utf8')); //carregando a base de informações
     var messaging_events = req.body.entry[0].messaging
     for (var i = 0; i < messaging_events.length; i++) {
-        var event = req.body.entry[0].messaging[i]
+        console.log("Dentro do for no app.post");
+		var event = req.body.entry[0].messaging[i]
         var sender = event.sender.id;
         globalSender = sender;
         if (event.message && event.message.text) {
-            var text = event.message.text;
-            getUserName(text, base, sender);
-            
-            
+            console.log("Dentro do if no app.post");
+			var text = event.message.text;
+            console.log("variável text = " + text);
+			console.log("variável base = " + base);
+			console.log("variável sender = " + sender);
+			console.log("Antes de chamar a função getUserName");
+			getUserName(text, base, sender);
+ 
         }
     }
     res.sendStatus(200)
@@ -54,7 +61,8 @@ console.log("escutando no endereço localhost:" + porta);
 
 
 function getUserName(text, base, sender){
-    console.log("user id = " + globalSender);
+    console.log("Início getUserName");
+	console.log("user id = " + globalSender);
     var userData;
     var urlReq = "https://graph.facebook.com/v2.6/"+globalSender.id+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token="+token; 
     
@@ -74,10 +82,10 @@ function getUserName(text, base, sender){
          console.log("body: " + JSON.stringify(body));
 		 
 		 var resposta = busca(text.substring(0,200).toLowerCase(), base, nomeUsuario);
-   sendTextMessage(sender, nomeUsuario+", "+resposta);
+		sendTextMessage(sender, nomeUsuario+", "+resposta);
     });
 	
-	
+	console.log("Fim getUserName");
 }
 
 function sendTextMessage(sender, text) {
