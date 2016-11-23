@@ -38,9 +38,9 @@ app.post('/webhook/', function (req, res) {
         globalSender = sender;
         if (event.message && event.message.text) {
             var text = event.message.text;
-            var nomeUsuario = getUserName();
-            var resposta = busca(text.substring(0,200).toLowerCase(), base, nomeUsuario);
-            sendTextMessage(sender, nomeUsuario+", "+resposta);
+            getUserName(text, base, sender);
+            
+            
         }
     }
     res.sendStatus(200)
@@ -53,7 +53,7 @@ console.log("escutando no endereço localhost:" + porta);
 
 
 
-function getUserName(){
+function getUserName(text, base, sender){
     console.log("user id = " + globalSender);
     var userData;
     var urlReq = "https://graph.facebook.com/v2.6/"+globalSender.id+"?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token="+token; 
@@ -72,8 +72,12 @@ function getUserName(){
         }
          console.log("response: " + JSON.stringify(response));
          console.log("body: " + JSON.stringify(body));
+		 
+		 var resposta = busca(text.substring(0,200).toLowerCase(), base, nomeUsuario);
+   sendTextMessage(sender, nomeUsuario+", "+resposta);
     });
-   
+	
+	
 }
 
 function sendTextMessage(sender, text) {
