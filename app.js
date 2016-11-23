@@ -88,7 +88,7 @@ function getUserName(text, base, sender){
 		 
 		 var resposta = busca(text.substring(0,200).toLowerCase(), base, nomeUsuario);
 		sendTextMessage(sender, nomeUsuario+", "+resposta);
-    });
+    })
 	
 	console.log("Fim getUserName");
 }
@@ -110,6 +110,6 @@ console.log("Início sendTextMessage");
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         }
-    });
+    })
 	console.log("Fim sendTextMessage");  
 }
