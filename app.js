@@ -86,6 +86,7 @@ function getUserName(text, base, sender){
 		 console.log("response: " + JSON.stringify(response));
          console.log("body: " + JSON.stringify(body));
 		 
+		 var nomeUsuario = body.first_name
 		 var resposta = busca(text.substring(0,200).toLowerCase(), base, nomeUsuario);
 		sendTextMessage(sender, nomeUsuario+", "+resposta);
     })
